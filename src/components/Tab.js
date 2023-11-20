@@ -1,29 +1,18 @@
 import React, { useState } from 'react';
 
-const Tab = ({ tabData }) => {
-  const [data, setData] = useState(tabData);
-  const [selectedContent, setSelectedContent] = useState('');
-
-  const handleItemClick = (content) => {
-    setSelectedContent(content);
-  };
+const Tab = ({ tabData}) => {
+  const [content, setContent] = useState(tabData[0].content);
 
   return (
     <div>
-      // <h1 style={{ textDecoration: 'underline' }}>Output:</h1>
-
       <ul>
-        {data.map((item, index) => (
-          <li key={index} onClick={() => handleItemClick(item.content)}>
-            {item.title}
-          </li>
+        {tabData.map((tab,index) => (
+          <li key={index} onClick={() => setContent(tab.content)}>{tab.title}</li>
         ))}
       </ul>
-
-      <p>{selectedContent}</p>
+      <p>{content}</p>
     </div>
   );
 };
 
 export default Tab;
- 
