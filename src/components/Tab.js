@@ -10,7 +10,7 @@ const Tab = ({ tabData }) => {
 
   return (
     <div>
-      <h1 style={{ textDecoration: 'underline' }}>Output:</h1>
+      // <h1 style={{ textDecoration: 'underline' }}>Output:</h1>
 
       <ul>
         {data.map((item, index) => (
